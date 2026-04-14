@@ -88,8 +88,7 @@ Performed Nmap scan to identify open ports and services.
 
 ### Nmap Scan
 
-![Nmap](screenshots/nmap-scan.png)
-
+![Nmap Scan](nmap-scan.png)
 ### FTP Access & Download
 
 ![FTP](screenshots/ftp-download.png)
