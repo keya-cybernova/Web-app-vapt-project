@@ -91,23 +91,23 @@ Performed Nmap scan to identify open ports and services.
 ![Nmap Scan](nmap-scan.png)
 ### FTP Access & Download
 
-![FTP](screenshots/ftp-download.png)
+![FTP](ftp-download.png)
 
 ### Flag Verification
 
-![Flag](screenshots/flag-verification.png)
+![Flag](flag-verification.png)
 
 ### Source Code (Hidden Flag)
 
-![Source](screenshots/source-code-flag.png)
+![Source](source-code-flag.png)
 
 ### Web Application
 
-![Web App](screenshots/web-application.png)
+![Web App](web-application.png)
 
 ### Directory Enumeration (Gobuster)
 
-![Gobuster](screenshots/directory-enumeration.png)
+![Gobuster](directory-enumeration.png)
 
 ---
 
