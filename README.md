@@ -1,81 +1,117 @@
-# Web Application VAPT – Vulnerability Assessment & Penetration Testing
+# Web App VAPT Project
 
-## Objective
+## 🔍 Project Overview
 
-Performed vulnerability assessment and penetration testing on a simulated vulnerable web application to identify security weaknesses and demonstrate real-world attack scenarios.
+This project demonstrates a hands-on Vulnerability Assessment and Penetration Testing (VAPT) lab performed on a simulated web application.
+
+The objective was to identify security vulnerabilities, exploit them, and extract sensitive information using industry-relevant tools and techniques.
 
 ---
 
-## Tools Used
+## 🛠️ Tools Used
 
 * Kali Linux
 * Nmap
-* Burp Suite
-* VirtualBox
+* FTP
+* Gobuster
 
 ---
 
-## Lab Setup
+## ⚙️ Lab Setup
 
-* Attacker: Kali Linux
-* Target: Simulated vulnerable web application
-* Network: Isolated lab setup
-
----
-
-## What I Did
-
-### Reconnaissance & Scanning
-
-* Performed aggressive scanning using Nmap (`nmap -A`)
-* Identified open ports and running services
-
-### Exploitation
-
-* Discovered FTP service allowing anonymous login
-* Extracted sensitive files using FTP and wget
-
-### Web Application Testing
-
-* Analyzed website content and source code
-* Identified sensitive data exposed in HTML
-* Accessed hidden endpoints like `/robots.txt` and `/admin`
-
-### Traffic Interception
-
-* Used Burp Suite to intercept HTTP requests
-* Extracted hidden data from intercepted traffic
+* Attacker Machine: Kali Linux
+* Target Machine: Vulnerable Web App (10.0.2.8)
+* Environment: Virtual Lab
 
 ---
 
-## Key Findings
+## 🚀 Steps Performed
 
-* FTP misconfiguration allowing anonymous access
-* Sensitive data exposed in website source code
-* Weak access control on admin panel
-* Exposure of sensitive endpoints
+### 1. Network Scanning
 
----
+Performed Nmap scan to identify open ports and services.
 
-## Impact
-
-These vulnerabilities could allow attackers to:
-
-* Gain unauthorized access to sensitive data
-* Discover hidden application components
-* Exploit weak authentication mechanisms
+* Found open ports: 21 (FTP), 22 (SSH), 80 (HTTP)
 
 ---
 
-## Recommendations
+### 2. FTP Exploitation (Flag 1)
 
-* Disable anonymous FTP access
-* Avoid exposing sensitive data in source code
-* Implement strong authentication and access control
-* Secure sensitive endpoints and directories
+* Discovered anonymous FTP login
+* Accessed FTP server
+* Downloaded sensitive file (`flag1.txt`)
+* Extracted Flag 1 from the file
 
 ---
 
-## Screenshots
+### 3. Directory Enumeration (Flag 2)
 
-(Add your screenshots below)
+* Used Gobuster to discover hidden directories
+* Identified `/robots.txt` endpoint
+* Found Flag 2 exposed in robots.txt
+
+---
+
+### 4. Source Code Analysis (Flag 3)
+
+* Inspected web page source using browser
+* Found hidden flag inside HTML comments
+* Identified information disclosure vulnerability
+
+---
+
+## 🔐 Key Findings
+
+### 🔴 Flag 1 – FTP Misconfiguration
+
+* Anonymous FTP access allowed
+* Sensitive file accessible without authentication
+  👉 **Risk:** Unauthorized data access
+
+---
+
+### 🔴 Flag 2 – Sensitive Data Exposure (robots.txt)
+
+* Sensitive information exposed in `/robots.txt`
+  👉 **Risk:** Attackers can discover hidden endpoints
+
+---
+
+### 🔴 Flag 3 – Information Disclosure
+
+* Flag found in HTML source code comments
+  👉 **Risk:** Developers exposing sensitive data in frontend
+
+---
+
+## 📸 Screenshots
+
+### Nmap Scan
+
+![Nmap](screenshots/nmap-scan.png)
+
+### FTP Access & Download
+
+![FTP](screenshots/ftp-download.png)
+
+### Flag Verification
+
+![Flag](screenshots/flag-verification.png)
+
+### Source Code (Hidden Flag)
+
+![Source](screenshots/source-code-flag.png)
+
+### Web Application
+
+![Web App](screenshots/web-application.png)
+
+### Directory Enumeration (Gobuster)
+
+![Gobuster](screenshots/directory-enumeration.png)
+
+---
+
+## 📌 Conclusion
+
+This project demonstrates practical skills in reconnaissance, enumeration, exploitation, and vulnerability analysis in a controlled environment. It highlights common real-world misconfigurations such as insecure FTP access, exposed endpoints, and improper handling of sensitive data.
